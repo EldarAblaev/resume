@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+}
+
+#wrapper{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#main{
+    min-height: 100%;
+}
+
+#header{
+    height: 10px;
+    background: #FFE680;
+}
+
+#leftSide{
+    width: 250px;
+    float:left;
+    padding-top: 10px;
+}
+
+.leftBlock{
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #d4d4d4;
+    background: #FFFAFA;
+}
+
+.leftBlock h5{
+    margin-bottom: 15px;
+    font-family: Arial;
+    font-size: 15px;
+    color: #696969;
+}
+
+.link{
+    height: 26px;
+    font-family: Arial;
+    font-size: 14px;
+    padding-top: 6px;
+    padding-left: 40px;
+    margin: 5px 0;
+}
+
+.link a{
+    text-decoration: none;
+    color: #104E8B;
+}
+
+.link a:hover{
+    text-decoration: underline;
+}
+
+#listVacans{
+    display: none;
+}
+
+#listVacans ul{
+    list-style-type: none;
+    margin-top: -10px;
+}
+
+#createVacans{
+    margin: -10px 0 0 100px;
+}
+#createVacans a{
+    font: 14px Helvetica, Arial, sans-serif;
+    color: #0D6AC9;
+    border-bottom: 1px dashed #0D6AC9;
+    text-decoration: none;
+}
+#createVacans a:hover{
+    text-decoration: none;
+    border-bottom:none;
+}
+
+.input{
+    background: url(../img/go.png) no-repeat;
+}
+
+.get{
+    background: url(../img/tick.png) no-repeat;
+}
+
+.consider{
+    background: url(../img/question.png) no-repeat;
+}
+
+.output{
+    background: url(../img/cross.png) no-repeat;
+}
+
+
+/*  Search  */
+.queryBackground{
+    display: inline-block;
+    border-radius: 5px;
+    padding: 4px;
+    margin-bottom: 10px;
+    background: -moz-linear-gradient(#D3D3D3, #CACACA 50%, #A9A9A9 50%, #9B9B9B);
+    background: -webkit-linear-gradient(#D3D3D3, #CACACA 50%, #A9A9A9 50%, #9B9B9B);
+    background: -o-linear-gradient(#D3D3D3, #CACACA 50%, #A9A9A9 50%, #9B9B9B);
+    background: -ms-linear-gradient(#D3D3D3, #CACACA 50%, #A9A9A9 50%, #9B9B9B);
+}
+
+.queryField{
+    width: 198px;
+    height: 32px;
+    padding: 0 5px;
+    font: 13px Helvetica, Arial, sans-serif;
+    border: 1px solid #747474;
+    border-radius: 3px;
+}
+
+.fullSearch{
+    float: left;
+    text-decoration: none;
+    font: 13px Helvetica, Arial, sans-serif;
+    color: #104E8B;
+    margin-top: 7px;
+}
+
+.fullSearch:hover{
+    text-decoration: underline;
+}
+
+#extParams{
+    display: none;
+    padding-left: 0;
+    margin: 30px 0;
+    height: auto;
+    clear: both;
+}
+
+#extParams p{
+    font: 13px Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: #1C1C1C;
+    margin-bottom: 7px;
+}
+
+.timeCheckbox{
+    display: block;
+    height: 22px;
+}
+
+.time a{
+    padding-left: 25px;
+    background: url(../img/checkbox.png) no-repeat;
+    font: 13px Arial, Helvetica, sans-serif;
+    color: #505050;
+    text-decoration: none;
+}
+
+.time a:hover{
+    background: url(../img/checkbox_hover.png) no-repeat;
+}
+
+.time a[class *= "checked"], .time a[class *= "checked"]:hover{
+    background: url(../img/checked.png) no-repeat;
+}
+
+.time input{
+    display: none;
+}
+
+.salary{
+    display: inline;
+}
+
+.infoBlock{
+    margin: 15px 0;
+}
+
+.param{
+    display: inline-block;
+    width: 70px;
+}
+
+.inputField{
+    width: 65px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    border: 1px solid #747474;
+}
+
+.first{
+    margin-right: 20px;
+}
+
+.submitButton{
+    width: 70px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 2px solid #9B9B9B;
+    border-radius: 5px;
+    color: #000000;
+    float: right;
+}
+
+/*  Main content     */
+#content{
+    width: 730px;
+    float:left;
+    margin: 10px;
+}
+
+.number{
+    font: 13px Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color: #696969;
+    margin-bottom: 10px;
+}
+
+.stars{
+    float: right;
+}
+
+.star{
+    display: inline-block;
+    background: url(../img/starempty.png) no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+.star input{
+    display: none;
+}
+
+.rightPanel{
+    float: right;
+    width: 200px;
+    position: relative;
+    top: -103px;
+    border: 1px solid #000000;
+}
+
+.avaBlock{
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+.shortInfo{
+    float: left;
+    height: 60px;
+    padding: 20px;
+    border: 1px solid #000000;
+}
+
+.job{
+    font: 18px Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #4F4F4F;
+}
+
+.fio{
+    margin-top: 10px;
+    font: 18px Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #828282;
+}
+
+.clear{
+    height: 1px;
+    width: 100%;
+    clear: both;
+}
+
+/*  Footer      */
+#footer{
+    height: 100px;
+    position: absolute;
+    width: 1000px;
+    background: #BFF08E;
+}
