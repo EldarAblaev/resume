@@ -7,6 +7,10 @@ html, body{
     height: 100%;
 }
 
+body{
+	min-height;
+}
+
 #wrapper{
     width: 1000px;
     margin: 0 auto;
@@ -279,7 +283,7 @@ html, body{
 /*  Footer      */
 #footer{
     height: 100px;
-    position: absolute;
+    
     width: 1000px;
     background: #BFF08E;
 }
