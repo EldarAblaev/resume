@@ -148,7 +148,7 @@ html, body{
 }
 #listVacans ul{
     list-style-type: none;
-    margin-top: -10px;
+    margin: 0 0 20px 50px;
 }
 #createVacans{
     margin: -10px 0 0 100px;
