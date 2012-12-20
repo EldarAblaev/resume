@@ -121,7 +121,6 @@ html, body{
 	-moz-border-radius: 6px;
     border: 1px solid #d4d4d4;
     background: #FFFACD;
-    behavior: url(/PIE.htc);
 }
 .leftBlock h5{
     margin-bottom: 15px;
@@ -469,6 +468,4 @@ p.blockHeadline{
     background: -ms-linear-gradient(#FFC154, #ff8a2b);
     background: -o-linear-gradient(#FFC154, #ff8a2b);
     background: linear-gradient(#FFC154, #ff8a2b);
-    -pie-background: linear-gradient(#FFC154, #ff8a2b);
-    behavior: url(/PIE.htc);
 }
