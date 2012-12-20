@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+.cuselFrameRight{
+    background: url(../img/down.png) no-repeat;
+}
+
+.cusel {
+    background: #fff;
+    border: 1px solid #747474;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    height: 20px;
+    background-position: left top;
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    z-index: 1;
+}
+
+.cuselFrameRight {
+    position: absolute;
+    z-index: 2;
+    top: 1px;
+    right: 1px;
+    height: 100%;
+    width: 35px;
+    background-position: right top;
+}
+
+.cuselText {
+    padding: 2px 2px 0 5px;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    font: 14px Helvetica, Arial, sans-serif;
+	color: #1C1C1C;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.search_results .cuselText {padding-top:6px ;}
+
+.cusel span {
+    display: block;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 2px 5px 5px 15px;
+    color: #5a5a5a;
+    font: 14px Helvetica, Arial, sans-serif;;
+
+}
+.cusel span:hover,
+.cusel .cuselOptHover {
+    color: #104E8B;
+}
+.cusel .cuselActive {
+    color: #104E8B;
+    cursor: default;
+}
+.cuselOpen {
+    z-index: 999;
+}
+
+/* styles for disabled select */
+.classDisCusel,
+.classDisCusel .cuselFrameRight {
+	background-image: url(../images/down.png) !important;
+    cursor: default;
+}
+.classDisCusel .cuselText {
+    cursor: default;
+}
+
+
+/*
+	styles for scrollbar
+*/
+/* контейнер для блока с прокруткой */
+.cusel .cusel-scroll-wrap { 
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    left: -1px;
+    top: 100%;
+    min-width: 100%;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #747474;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.search_results .cusel .cusel-scroll-wrap {background: #eaeaea;}
+
+.cusel .jScrollPaneContainer {
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+
+}

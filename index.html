@@ -6,125 +6,267 @@
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/modal.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/cusel.css">
     <script src="js/jquery1_8_3.js" type="text/javascript"></script>
+    <script src="js/jqModal.js" type="text/javascript"></script>
+    <script src="js/cusel.js" type="text/javascript"></script>
+	<script src="js/jquery.maskedinput-1.2.2.js" type="text/javascript"></script>
+	<script src="js/ajaxForm.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/PIE.js"></script>
 </head>
 
 <body>
-
 <div id="wrapper">
-    <div id="main" style="border-bottom: 1px solid #000000;">
-        <div id="header">
-            header
+    <div id="header">
+        <div class="logo hblock"><img src="img/logo.gif" height="100px"></div>
+        <div class="center hblock">
+            <ul id="menu">
+                <li><a href="#" class="menuItem">Главная</a></li>
+                <li><a href="#" class="menuItem">Резюме</a>
+                    <ul class="subMenu">
+                        <li><a href="#" class="subItem">Список</a></li>
+                        <li><a href="#" class="subItem">Поиск</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="menuItem">Вакансии</a>
+                    <ul class="subMenu">
+                        <li><a href="#" class="subItem">Создать</a></li>
+                        <li><a href="#" class="subItem">Список</a></li>
+                        <li><a href="#" class="subItem">Поиск</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="menuItem last">Новости</a>
+                </li>
+            </ul>
         </div>
-        <div id="container">
-            <div id="leftSide">
-                <div class="leftBlock">
-                    <h5>Вакансии</h5>
-                    <div class="link get" id="vacans"><a href="#">Мои вакансии (2)</a></div>
-                    <div id="listVacans">
-                        <ul>
-                            <a href="#"><li>Вакансия 1</li></a>
-                            <a href="#"><li>Вакансия 2</li></a>
-                        </ul>
-                    </div>
-                    <div id="createVacans"><a href="#">создать</a></div>
+        <div class="right hblock">
+            <div id="authLine"><a href="#">Личный кабинет</a> | <a href="#">Выйти</a></div>
+        </div>
+    </div>
+    <hr class="headerLine"/>
+    <div class="clear"></div>
+    <div id="container">
+        <div id="leftSide">
+            <div class="leftBlock">
+                <h5>Вакансии</h5>
+                <div class="link get" id="vacans"><a href="javascript:void(0)">Мои вакансии (2)</a></div>
+                <div id="listVacans">
+                    <ul>
+                        <a href="#"><li>Вакансия 1</li></a>
+                        <a href="#"><li>Вакансия 2</li></a>
+                    </ul>
                 </div>
-                <div class="leftBlock">
-                    <h5>Резюме</h5>
-                    <div class="link input"><a href="#" >Входящие</a></div>
-                    <div class="link get"><a href="#" >Принятые</a></div>
-                    <div class="link consider"><a href="#" >На рассмотрении</a></div>
-                    <div class="link output"><a href="#" >Отклоненные</a></div>
-                </div>
+                <div id="createVacans"><a href="#">создать</a></div>
+            </div>
+            <div class="leftBlock">
+                <h5>Резюме</h5>
+                <div class="link input"><a href="#" >Входящие</a></div>
+                <div class="link get"><a href="#" >Принятые</a></div>
+                <div class="link consider"><a href="#" >На рассмотрении</a></div>
+                <div class="link output"><a href="#" >Отклоненные</a></div>
+            </div>
 
-                <div class="leftBlock">
-                    <h5>Поиск резюме</h5>
-                    <form class="formSearch" action="/search" method="get">
-                        <span class="queryBackground" ><input type="text" name="query" class="queryField" placeholder="Поиск" value=""></span>
-                        <a class="fullSearch" href="#">Расширенный поиск</a>
-                        <div id="extParams">
-                            <p>Период</p>
-                            <div class="time">
-                                <a href="#" class="timeCheckbox">
-                                    24 часа <input type="radio" name="timeRadio" value="24">
-                                </a>
-                            </div>
-                            <div class="time">
-                                <a href="#" class="timeCheckbox">
-                                    3 дня <input type="radio" name="timeRadio" value="3">
-                                </a>
-                            </div>
-                            <div class="time">
-                                <a href="#" class="timeCheckbox">
-                                    7 дней <input type="radio" name="timeRadio" value="7">
-                                </a>
-                            </div>
-                            <div class="time">
-                                <a href="#" class="timeCheckbox">
-                                    все актуальные <input type="radio" name="timeRadio" value="1">
-                                </a>
-                            </div>
-
-                            <div class="infoBlock">
-                                <p>Зарплата:</p>
-                                <p class="salary from">от</p>
-                                <input class="inputField first" type="text" name="salaryFrom">
-                                <p class="salary to">до</p>
-                                <input class="inputField" type="text" name="salaryTo">
-                            </div>
-
-                            <div class="">
-                                <p class="param">Возраст:</p>
-                                <input class="inputField age" type="text" name="age">
-                            </div>
-                            <div class="">
-                                <p class="param">Пол:</p>
-                                <select class="gender" name="gender">
-                                    <option>Мужской</option>
-                                    <option>Женский</option>
-                                </select>
-                            </div>
+            <div class="leftBlock">
+                <h5>Поиск резюме</h5>
+                <form class="formSearch" action="/search" method="get">
+                    <span class="queryBackground" ><input type="text" name="query" class="queryField" placeholder="Поиск" value=""></span>
+                    <a class="fullSearch" href="#" onclick="return false;">Расширенный поиск</a>
+                    <div id="extParams">
+                        <p>Период</p>
+                        <div class="time">
+                            <a href="#" class="timeCheckbox">
+                                24 часа <input type="radio" name="timeRadio" value="24">
+                            </a>
                         </div>
-                        <input class="submitButton" type="submit" name="submit" value="Поиск">
-                        <div style="height: 1px; clear: both;"></div>
-                    </form>
-                </div>
+                        <div class="time">
+                            <a href="#" class="timeCheckbox">
+                                3 дня <input type="radio" name="timeRadio" value="3">
+                            </a>
+                        </div>
+                        <div class="time">
+                            <a href="#" class="timeCheckbox">
+                                7 дней <input type="radio" name="timeRadio" value="7">
+                            </a>
+                        </div>
+                        <div class="time">
+                            <a href="#" class="timeCheckbox">
+                                все актуальные <input type="radio" name="timeRadio" value="1">
+                            </a>
+                        </div>
 
+                        <div class="infoBlock">
+                            <p>Зарплата:</p>
+                            <p class="salary from">от</p>
+                            <input class="inputField first" type="text" name="salaryFrom">
+                            <p class="salary to">до</p>
+                            <input class="inputField" type="text" name="salaryTo">
+                        </div>
+
+                        <div class="">
+                            <p>Возраст:</p>
+                            <p class="age from">от</p>
+                            <input class="inputField first" type="text" name="ageFrom">
+                            <p class="age to">до</p>
+                            <input class="inputField" type="text" name="ageTo">
+                        </div>
+                        <div class="genderWrap">
+                            <p class="param">Пол:</p>
+                            <select class="gender" name="gender">
+                                <option value="none">...</option>
+                                <option value="male">Мужской</option>
+                                <option value="female">Женский</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input class="submitButton" type="submit" name="submit" value="Поиск">
+                    <div style="height: 1px; clear: both;"></div>
+                </form>
             </div>
-            <div id="content">
-                <div class="number">Резюме №12345, от 31.12.2012
-                    <div class="stars">
-                        <div class="star"><input type="radio" name="star"></div>
-                        <div class="star"><input type="radio" name="star"></div>
-                        <div class="star"><input type="radio" name="star"></div>
-                        <div class="star"><input type="radio" name="star"></div>
-                        <div class="star"><input type="radio" name="star"></div>
+
+        </div>
+        <div id="content">
+            <div class="number">Резюме №12345, от 1.12.2012
+                <div class="stars">
+                    <div class="star"><input type="radio" name="star"></div>
+                    <div class="star"><input type="radio" name="star"></div>
+                    <div class="star"><input type="radio" name="star"></div>
+                    <div class="star"><input type="radio" name="star"></div>
+                    <div class="star"><input type="radio" name="star"></div>
+                </div>
+            </div>
+
+            <div class="avaBlock">
+                <img class="ava" src="img/ava.jpg"/>
+            </div>
+            <div class="shortInfo">
+                <div class="job">Ученик школы разработки интерфейсов</div>
+                <div class="fio" >Аблаев Эльдар Энверович, 23 года</div>
+            </div>
+            <div class="clear"></div>
+            <div class="rightPanel">
+                <div class="link sendMessage"><a href="#" class="sendMess">Написать сообщение</a></div>
+                <div class="link consider"><a href="#" >Рассмотреть</a></div>
+                <div class="link get"><a href="#" >Принять</a></div>
+                <div class="link output"><a href="#" >Отклонить</a></div>
+            </div>
+            <div style="width: 500px; margin-top: 20px;">
+                <div class="blockHeadline">Контактная информация</div>
+                <div class="info">
+                    <div class="infoLine">
+                        <div class="fieldName">E-mail:</div>
+                        <div class="text">eldar.ablaev@gmail.com</div>
+                    </div>
+                    <div class="infoLine">
+                        <div class="fieldName">Моб. телефон:</div>
+                        <div class="text">+38-099-744-72-46</div>
                     </div>
                 </div>
-
-                <div class="avaBlock">
-                    <img class="ava" src="img/ava.jpg"/>
+                <div class="blockHeadline">Личная информация</div>
+                <div class="info">
+                    <div class="infoLine">
+                        <div class="fieldName">Город:</div>
+                        <div class="text">Симферополь</div>
+                    </div>
+                    <div class="infoLine">
+                        <div class="fieldName">Дата рождения:</div>
+                        <div class="text">18 мая 1989</div>
+                    </div>
                 </div>
-                <div class="shortInfo">
-                    <div class="job">Ученик школы разработки интерфейсов</div>
-                    <div class="fio" >Аблаев Эльдар Энверович, 23 года</div>
+                <div class="blockHeadline">Образование</div>
+                <div class="info">
+                    <div class="infoLine">
+                        <div class="fieldName">Учебное заведение:</div>
+                        <div class="text">ТНУ им. В.И.Вернадского</div>
+                    </div>
+                    <div class="infoLine">
+                        <div class="fieldName">Факультет:</div>
+                        <div class="text">физический</div>
+                    </div>
+                    <div class="infoLine">
+                        <div class="fieldName">Специальность:</div>
+                        <div class="text">радиофизика и электроника</div>
+                    </div>
+                    <div class="infoLine">
+                        <div class="fieldName">Год окончания:</div>
+                        <div class="text">2011</div>
+                    </div>
+                    <div class="infoLine">
+                        <div class="fieldName">Владение английским языком:</div>
+                        <div class="text">чтение технической документации</div>
+                    </div>
                 </div>
-                <div class="clear"></div>
-                <div class="rightPanel">dsfdsf dsfsd sdf sdf sdf sdfsdf sdf  dsf  dsf sd fs df sdf sdf sdf sd f sdf s df s fdsfdsf dsfsd sdf sdf sdf sdfsdf sdf  dsf  dsf sd fs df sdf sdf sdf sd f sdf s df s fdsfdsf dsfsd sdf sdf sdf sdfsdf sdf  dsf  dsf sd fs df sdf sdf sdf sd f sdf s df s f</div>
-                <div style="width: 500px; border: 1px solid #000000; margin-top: 20px;">dsfdsf dsfsd sdf sdf sdf sdfsdf sdf  dsf  dsf sd fs df sdf sdf sdf sd f sdf s df s fdsfdsf dsfsd sdf sdf sdf sdfsdf sdf  dsf  dsf sd fs df sd</div>
+                <div class="blockHeadline">О вакансии</div>
+                <div class="info">
+                    <div class="infoLine">
+                        <div class="fieldName">Ожидания от школы:</div>
+                        <div class="text">Усовершенствовать знания в области HTML, CSS, JS. Получить практические навыки построения интерфейсов. Узнать современные технологии  и методы, применяемые в современных сервисах. Изучить технологию БЭМ. По завершению школы хотел бы стать сотрудником Яндекса.</div>
+                    </div>
+                    <div class="infoLine">
+                        <div class="fieldName">Откуда узнал:</div>
+                        <div class="text">По рекомендации</div>
+                    </div>
+                    <div class="infoLine">
+                        <div class="fieldName">Время, уделяемое стажировке или работе в Яндекс:</div>
+                        <div class="text">В случае приема на стажировку или работу буду уделять полный рабочий день.</div>
+                    </div>
+                </div>
+                <div class="blockHeadline">Опыт работы</div>
+                <div class="info">
+                    <div class="infoLine">
+                        <div class="fieldName">Опыт разработки:</div>
+                        <div class="text">В данный момент я работаю Junior-PHP программистом в фирме SECL Group. Участвую в разработке проектов whitestore.com.ua, pedrada.com.ua и lego.secl.com.ua, который еще совсем в начальной стадии. Освоил HostCMS и немного Битрикс.</div>
+                    </div>
+					<div class="infoLine">
+                        <div class="fieldName">Языки программирования, фреймворки и технологии:</div>
+                        <div class="text">На данный момент программирую на PHP. В качестве СУБД использую MySQL. В процессе изучения HostCMS изучил XML и XSLT шаблонизатор. С недавнего времени начал изучать язык Python и фреймворк на основе этого языка Django. В процессе изучения решил строить небольшую тестовую социальную сеть. </div>
+                    </div>
+					<div class="infoLine">
+                        <div class="fieldName">Редакторы и среды разработки:</div>
+                        <div class="text">Изначально работал в текстовом редакторе Notepad++, после перехода на Ubuntu пользуюсь Sublime Text2. Также использовал NetBeans. Для разработки проекта на Django использую IDE PyCharm.</div>
+                    </div>
+					<div class="infoLine">
+                        <div class="fieldName">Используемые ОС:</div>
+                        <div class="text">Изначально работал на Windows. Сейчас полностью работаю в ОС Ubuntu. </div>
+                    </div>
+					<div class="infoLine">
+                        <div class="fieldName">Системы контроля версий:</div>
+                        <div class="text">На данный момент изучаю систему контроля версий GIT.</div>
+                    </div>
+					<div class="infoLine">
+                        <div class="fieldName">Системы постановки и ведения задач:</div>
+                        <div class="text">Redmine</div>
+                    </div>
+					<div class="infoLine">
+                        <div class="fieldName">Полезные ресурсы:</div>
+                        <div class="text">Для изучения JavaScript использую learn.javascript.ru. Для HTML и CSS - htmlbook.ru. Для GIT - githowto.com. Для jQuery - jquery.page2page.ru</div>
+                    </div>
+					<div class="infoLine">
+                        <div class="fieldName">...</div>
+                        <div class="text">...</div>
+                    </div>
+                </div>
             </div>
         </div>
-
         <div class="clear"></div>
     </div>
-
-    <!--<div id="footer">
-        footer
-    </div>-->
+    <div class="hfooter"></div>
 </div>
+
+<div id="footer">
+    <div id="copyright">Eldar &copy; copyright 2012</div>
+</div>
+
 
 <script type="text/javascript">
     $(document).ready(function() {
+
+        var params = {changedEl: ".gender", visRows: 12, scrollArrows: true};
+        cuSel(params);
+
+        $('.info').each(function() {
+            $(this).children(':odd').css('background', '#DCDCDC');
+        });
 
         $('#vacans').click(function() {
             $('#listVacans').slideToggle();
@@ -133,15 +275,22 @@
         $('.fullSearch').click(function() {
             $('#extParams').slideToggle();
         });
+		
+		$('[name=salaryFrom]').mask('?99999');
+		$('[name=salaryTo]').mask('?999999');
+		$('[name=ageFrom]').mask('?99');
+		$('[name=ageTo]').mask('?99');
 
         $('.timeCheckbox').click(function() {
             if(!$(this).hasClass('checked')) {
                 $('.timeCheckbox').removeClass('checked');
                 $(this).toggleClass('checked');
                 $(this).children('input').attr('checked', true);
+                return false;
             } else {
                 $(this).removeClass('checked')
                 $(this).children('input').attr('checked', false);
+                return false;
             }
         });
 
@@ -176,8 +325,54 @@
             }
         }
 
+        $('.subMenu').hide();
+        $('#menu li').hover(
+            function() {
+                $(this).children('.subMenu').fadeIn(400);
+            }, 
+            function() {
+                $(this).children('.subMenu').fadeOut(100);
+            }
+        );
+
+        $('.messageWin').jqm({trigger: 'a.sendMess'});
+		$('.success').jqm();
+		
+		$('#messForm').ajaxForm({
+			success: function() {
+				$('.messageWin').jqmHide();
+				$('.success').jqmShow();
+				setTimeout(function() { $('.success').jqmHide() }, 1000);
+			}
+		});
+        
     });
 </script>
+
+<div class="messageWin jqmWindow">
+    <div class="closeButtonWrap">
+        <a href="#" class="closeButton jqmClose"></a>
+    </div>
+    <div class="overlayInner">
+        <h3>Отправить письмо</h3>
+        <p class="receiver">Получатель: Эльдар Аблаев</p>
+		<form method="post" action="#" name="messForm" id="messForm">
+			<p class="blockHeadline">Тема</p>
+			<input type="text" name="message_theme" class="messageTheme">
+			<p class="blockHeadline">Сообщение</p>
+			<textarea class="messageText"></textarea>
+			<input id="submitMessage" type="submit" value="Отправить" name="submitMessage">
+		</form>
+    </div>
+</div>
+<div class="success jqmWindow">
+	<div class="closeButtonWrap">
+        <a href="#" class="closeButton jqmClose"></a>
+    </div>
+    <div class="overlayInner">
+		Сообщение отправлено!
+	</div>
+</div>
 
 </body>
 </html>
